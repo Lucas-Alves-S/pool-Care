@@ -113,7 +113,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                 <a href="./updates/user.php"
                     class="edit text-center rounded-lg bg-blue-400 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-5 md:row-span-2 md:col-span-1 md:h-full md:bg-blue-800 md:hover:bg-indigo-600 py-3">Editar
                     Perfil</a>
-                <a href="./updates/senha.php"
+                <a href="./updates/senha.php?tabela=user"
                     class="changePsw text-center rounded-lg bg-blue-500 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-5 md:row-span-2 md:col-span-1 md:h-full md:bg-blue-800 md:hover:bg-indigo-700 py-3">
                     Alterar Senha</a>
                 <a href="../index.html"
