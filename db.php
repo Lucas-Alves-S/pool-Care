@@ -29,6 +29,19 @@ class CRUD
         }
     }
 
+    public function cadastroprofissional($nome, $email, $senha, $telefone)
+    {
+        $code = mt_rand(10000, 99999);
+        $query = "INSERT INTO profissional (nome, email, senha, telefone, verify_cod) VALUES ('$nome', '$email', '$senha', '$telefone', $code)";
+        $result = $this->connection->query($query);
+        if ($result == true) {
+            echo "<script>window.location.href='../profProfile.php';</script>";
+            } else {
+            print "<script>alert('Não foi possível cadastrar!')</script>";
+        }
+    }
+
+
     public function cadastropisicna($table, $nome, $largura, $altura, $comprimento, $proxima, $ultima, $fk)
     {
         $query = "INSERT INTO $table (nome, largura, altura, comprimento, proximaLimpeza, ultimaLimpeza, fk_user_id) VALUES ('$nome', $largura, $altura, $comprimento, '$proxima', '$ultima', $fk)";

@@ -116,7 +116,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                 <a href="./updates/senha.php"
                     class="changePsw text-center rounded-lg bg-blue-500 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-5 md:row-span-2 md:col-span-1 md:h-full md:bg-blue-800 md:hover:bg-indigo-700 py-3">
                     Alterar Senha</a>
-                <a href="../../index.html"
+                <a href="../index.html"
                     class="edit rounded-lg bg-red-500 transition duration-700 ease-in-out hover:bg-red-600 w-full row-span-2 flex items-center justify-center md:row-start-7 md:row-span-2 md:col-span-1 md:h-full md:bg-red-800 md:hover:bg-red-600 py-3">
                     Logout</a>
                 <form method="POST"
