@@ -53,7 +53,7 @@ $piscinas = $crud->selectpiscina('piscina_id', $_GET['id']);
 
                 <label for="cloro">Informe o nível de Cloro</label>
                 <input type="number" step="0.01" required name="cloro" id="cloro" class="border border-sky-500 rounded-full focus:outline-none focus:ring focus:ring-sky-500 p-1 md:bg-[#0b131e]">
-
+                <a href="./oquefazer.php">Não sei calcular valor do P.H. e nível do cloro</a>
                 <input type="submit" id="calc" value="Realizar Cálculos" class="cursor-pointer p-3 bg-sky-500 rounded-full hover:bg-sky-600 transition duration-700 ease-in-out mt-6">
                 </input>
             </form>

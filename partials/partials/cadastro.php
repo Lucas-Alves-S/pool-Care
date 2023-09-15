@@ -81,7 +81,7 @@ if(isset($_POST["Cadastrar"])) {
       </div>
 
       <button class="text-base google row-start-5 md:col-span-1 col-span-2 rounded-lg bg-zinc-100 transition duration-400 ease-in-out hover:bg-zinc-50">
-        <img src="/../assets/google-logo.png" class="md:w-[10%] md:mr-4 w-[20%] ml-3" alt="" />Entrar com Google
+        <img src="../../assets/google-logo.png" class="md:w-[10%] md:mr-4 w-[20%] ml-3" alt="" />Entrar com Google
       </button>
 
 

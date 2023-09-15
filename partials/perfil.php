@@ -61,7 +61,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
 <body>
     <div class="all flex flex-col md:flex-row">
         <div
-            class="profile container flex flex-col items-center text-2xl p-5 md:w-1/4 md:h-screen md:shadow-2xl md:shadow-black md:z-10 md:bg-slate-700 md:text-white w-screen">
+            class="profile container flex flex-col items-center text-2xl p-5 md:w-1/4 md:h-screen md:shadow-2xl md:shadow-black md:z-10 md:bg-slate-700 md:text-white w-screen ">
             <div class="avatar rounded-full h-1/3 md:h-auto bg-black mb-8 "><img
                     class="rounded-full min-h-40 max-h-40 min-w-40 max-w-40 w-40 h-40"
                     src=".././assets/picture.jpeg"
@@ -127,7 +127,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
 
             </div>
         </div>
-        <div class="pools flex p-10 w-screen h-full md:h-screen bg-blue-50 md:z-0 md:p-20 flex-row flex-wrap">
+        <div class="pools flex p-10 w-screen h-full md:h-screen bg-blue-50 md:z-0 md:p-20 flex-row flex-wrap ">
             <a href="<?php echo $link; ?>" id="btnAddPool" onclick="avisoConta()"
                 class="bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:m-4 shadow-2xl shadow-slate-400/50 rounded-xl cursor-pointer p-5 hover:bg-slate-400/[0.4] transition duration-700 ease-in-out hover:shadow-slate-800/50 text-3xl text-center flex flex-col md:h-1/5 md:w-auto flex-0">
                 Adicionar
