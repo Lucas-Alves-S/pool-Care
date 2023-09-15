@@ -7,7 +7,7 @@ if (isset($_POST['login'])){
     $email = $_POST['email'];
     $senha = $_POST['psw'];
     $_SESSION["email"] = $email;
-    $crud->login('user', $email, $senha);
+    $crud->login($email, $senha);
 }
 ?>
 <!DOCTYPE html>

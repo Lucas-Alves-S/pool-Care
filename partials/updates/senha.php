@@ -12,7 +12,7 @@ $code = $userData['verify_cod'];
 if (isset($_POST['submit'])) {
     $novasenha = $_POST['psw'];
     $verify_code = $_POST['code'];
-    $crud->updatesenha($_GET['tabela'], $novasenha, $verify_code);
+    $crud->updatesenha("{$_GET['tabela']}", $novasenha, $verify_code);
 }
 ?>
 <!DOCTYPE html>

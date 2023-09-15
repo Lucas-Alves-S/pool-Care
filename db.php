@@ -54,17 +54,26 @@ class CRUD
         }
     }
 
-    public function login($table, $email, $senha)
+    public function login($email, $senha)
     {
-        $query = "SELECT * FROM $table WHERE email = '$email' AND senha = '$senha'";
+        $query = "SELECT * FROM user WHERE email = '$email' AND senha = '$senha'";
         $result = $this->connection->query($query);
         $quant = $result->num_rows;
         if($quant > 0){
             echo "<script>alert('Entrando...'); window.location.href='.././perfil.php';</script>";
             return true;
         }else{
+            $query = "SELECT * FROM profissional WHERE email = '$email' AND senha = '$senha'";
+            $result = $this->connection->query($query);
+            $quant = $result->num_rows;
+            if ($quant > 0){
+                echo "<script>alert('Entrando...'); window.location.href='.././profProfile.php';</script>";
+                return true;
+            }
+            else {
             print "<script>alert('Usuário não encontrado!');</script>;";
             return false;
+            }
         }
     }
 
