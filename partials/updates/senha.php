@@ -3,7 +3,7 @@ require_once("../../db.php");
 require_once("../../library/PHPMailer/mail.php");
 session_start();
 $crud = new CRUD();
-$userData = $crud->selectuser("user", $_SESSION["email"]);
+$userData = $crud->selectuser($_GET['tabela'], $_SESSION["email"]);
 $email = $userData['email'];
 $nome = $userData['nome'];
 $code = $userData['verify_cod'];
@@ -12,7 +12,7 @@ $code = $userData['verify_cod'];
 if (isset($_POST['submit'])) {
     $novasenha = $_POST['psw'];
     $verify_code = $_POST['code'];
-    $crud->updatesenha("$_GET['tabela']", $novasenha, $verify_code);
+    $crud->updatesenha($_GET['tabela'], $novasenha, $verify_code);
 }
 ?>
 <!DOCTYPE html>
