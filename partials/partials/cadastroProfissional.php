@@ -80,7 +80,7 @@ if(isset($_POST["Cadastrar"])) {
           </i>
         </div>
       </div>
-      <input type="submit" value="Cadastrar" name="Cadastrar" class="text-base regis cursor-pointer row-start-5 md:col-span-1 col-span-2 rounded-lg bg-sky-500 transition duration-400 ease-in-out hover:bg-sky-400" id="btnRegister"/>
+      <input type="submit" value="Cadastrar" name="Cadastrar" class="text-base regis cursor-pointer row-start-6 md:col-span-1 col-span-2 rounded-lg bg-sky-500 transition duration-400 ease-in-out hover:bg-sky-400" id="btnRegister"/>
 
       <div class="goToLogin md:col-span-2 col-span-4 text-blue-600 text-xs text-center">
         <a href="./login.php" class="underline underline-offset-1">Já possuo uma conta</a>
@@ -91,8 +91,8 @@ if(isset($_POST["Cadastrar"])) {
       </button>
 
 
-      <div class="image row-start-1 row-end-7 col-span-2 hidden md:block">
-        <img src="../../assets/limpador.png" class="max-h-[100%] w-[100%]" alt="">
+      <div class="image row-start-1 row-end-7 col-span-2 hidden md:flex items-center justify-center">
+        <img src="../../assets/limpador.png" class="max-h-[70%] w-[70%]" alt="">
     </div>
     </form>
     <svg class="absolute bottom-0" id="wave" style="transform: rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">

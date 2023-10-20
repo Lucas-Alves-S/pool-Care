@@ -110,7 +110,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                         ?>
                     </p>
                 </div>
-                <a href="./updates/user.php"
+                <a href="./update.php?pagina=user"
                     class="edit text-center rounded-lg bg-blue-400 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-5 md:row-span-2 md:col-span-1 md:h-full md:bg-blue-800 md:hover:bg-indigo-600 py-3">Editar
                     Perfil</a>
                 <a href="./updates/senha.php?tabela=user"
@@ -129,7 +129,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
         </div>
         <div class="pools flex p-10 w-screen h-full md:h-screen bg-blue-50 md:z-0 md:p-20 flex-row flex-wrap ">
             <a href="<?php echo $link; ?>" id="btnAddPool" onclick="avisoConta()"
-                class="bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:m-4 shadow-2xl shadow-slate-400/50 rounded-xl cursor-pointer p-5 hover:bg-slate-400/[0.4] transition duration-700 ease-in-out hover:shadow-slate-800/50 text-3xl text-center flex flex-col md:h-1/5 md:w-auto flex-0">
+                class="bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:mx-4 shadow-2xl shadow-slate-400/50 rounded-xl cursor-pointer p-5 hover:bg-slate-400/[0.4] transition duration-700 ease-in-out hover:shadow-slate-800/50 text-3xl text-center flex flex-col md:h-1/5 md:w-auto flex-0">
                 Adicionar
                 <svg xmlns="http://www.w3.org/2000/svg" class="md:p-4 md:w-auto w-1/4 self-center"
                     viewBox="0 0 448 512">
@@ -139,7 +139,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                 <strong class="text-sky-500">Piscina</strong>
             </a>
             <div
-                class="relative bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:m-4 shadow-2xl shadow-slate-400/50 rounded-xl p-5 md:h-1/5 md:w-auto flex-0"
+                class="relative bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:mx-4 shadow-2xl shadow-slate-400/50 rounded-xl p-5 md:h-1/5 md:w-auto flex-0"
                 id="poolCard1">
                 <div id="pool1" class="content h-full flex flex-col justify-between w-4/5">
                     <?php
@@ -172,7 +172,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                 </a>
             </div>
             <div
-                class="relative bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:m-4 shadow-2xl shadow-slate-400/50 rounded-xl p-5 md:h-1/5 md:w-auto flex-0"
+                class="relative bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:mx-4 shadow-2xl shadow-slate-400/50 rounded-xl p-5 md:h-1/5 md:w-auto flex-0"
                 id="poolCard2">
                 <div id="pool2" class="content h-full flex flex-col justify-between w-4/5">
                     <?php
@@ -205,7 +205,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                 </a>
             </div>
             <div
-                class="relative bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:m-4 shadow-2xl shadow-slate-400/50 rounded-xl p-5 md:h-1/5 md:w-auto flex-0"
+                class="relative bg-white/[0.4] h-1/4 md:flex-1 w-full mb-4 md:mx-4 shadow-2xl shadow-slate-400/50 rounded-xl p-5 md:h-1/5 md:w-auto flex-0"
                 id="poolCard3">
                 <div id="pool3" class="content h-full flex flex-col justify-between w-4/5">
                     <?php

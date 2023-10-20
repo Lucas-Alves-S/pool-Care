@@ -134,10 +134,29 @@ class CRUD
         if ($result == true) {
             $_SESSION['email'] = $email;
             print "<script>alert('Edição concluída!');</script>";
-            print "<script>location.href='../perfil.php';</script>";
+            print "<script>location.href='./perfil.php';</script>";
         } else {
             print "<script>alert('ERRO: Não foi possível concluir a edição!');</script>";
-            print "<script>location.href='../perfil.php';</script>";
+            print "<script>location.href='./perfil.php';</script>";
+        }
+    }
+
+    public function updateprofissional($nome, $email, $telefone, $id)
+    {
+        $comm = "UPDATE profissional SET nome='{$nome}',
+                                            email='{$email}',
+                                            telefone='{$telefone}' 
+                                        WHERE
+                                            profissional_id = $id";
+        $result = $this->connection->query($comm);
+
+        if ($result == true) {
+            $_SESSION['email'] = $email;
+            print "<script>alert('Edição concluída!');</script>";
+            print "<script>location.href='./profProfile.php';</script>";
+        } else {
+            print "<script>alert('ERRO: Não foi possível concluir a edição!');</script>";
+            print "<script>location.href='./profProfile.php';</script>";
         }
     }
 

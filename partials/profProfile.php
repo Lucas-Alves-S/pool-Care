@@ -17,14 +17,14 @@ $userData = $crud->selectuser("profissional", $_SESSION["email"]);
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-screen">
-    <main class="w-screen h-1/2 flex flex-col items-center pt-20" style="background-image: url('../assets/backgroundPerfil.jpg'); background-size: cover; background-position: center;">
+    <main class="w-screen h-1/2 flex flex-col items-center pt-20" style="background-image: url('../assets/backgroundPerfil.png'); background-size: cover; background-position: center;">
         <img
             class="rounded-full min-h-40 max-h-40 min-w-40 max-w-40 w-40 h-40"
             src=".././assets/picture.jpeg"
         alt="">
-        <p class="text-xl bg-white rounded-md my-3"><?php echo $userData['nome'] ?></p>
+        <p class="text-xl bg-white rounded-md my-3 px-3"><?php echo $userData['nome'] ?></p>
         <div class="buttons flex w-1/2 my-3">
-            <a href="./updates/user.php"
+            <a href="./update.php?pagina=profissional"
                 class="edit text-center rounded-lg bg-blue-400 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-5 md:row-span-2 md:col-span-1 md:h-full md:bg-blue-800 md:hover:bg-indigo-600 py-3">Editar
                 Perfil</a>
             <a href="./updates/senha.php?tabela=profissional"

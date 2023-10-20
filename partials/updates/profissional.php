@@ -3,15 +3,14 @@ require("../db.php");
 session_start();
 $crud = new CRUD();
 
-$dados = $crud->selectuser('user', $_SESSION['email']);
+$dados = $crud->selectuser('profissional', $_SESSION['email']);
 
 if (isset($_POST['submit'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = $_POST['tel'];
-    $endereco = $_POST['address'];
-    $id = $dados['user_id'];
-    $crud->updateuser($nome, $email, $telefone, $endereco, $id);
+    $id = $dados['profissional_id'];
+    $crud->updateprofissional($nome, $email, $telefone, $id);
 }
 ?>
 <!DOCTYPE html>
@@ -57,13 +56,7 @@ if (isset($_POST['submit'])) {
                 <label for="tel">Telefone</label>
                 <input type="text"
                     class="border border-sky-500 rounded-full h-fit min-w-full focus:outline-none focus:ring focus:ring-sky-500 p-2"
-                    id="telefone" name="tel" required value="<?php echo "{$dados['telefone']}"?>">
-            </div>
-            <div class="address">
-                <label for="address">Endereço</label>
-                <input type="text"
-                    class="border border-sky-500 rounded-full h-fit min-w-full focus:outline-none focus:ring focus:ring-sky-500 p-2"
-                    id="address" name="address" required value="<?php echo "{$dados['endereco']}"?>">
+                    id="tel" name="tel" required value="<?php echo "{$dados['telefone']}"?>">
             </div>
             <input type="submit" name="submit" value="Salvar Mudanças" class="save rounded-lg bg-sky-800 transition duration-700 ease-in-out w-full hover:bg-violet-700 flex items-center justify-center text-white h-2/3 self-center">
         </form>
