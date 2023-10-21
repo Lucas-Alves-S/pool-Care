@@ -15,7 +15,7 @@ if ($piscinas[2] != "") {
 }
 
 if (isset($_POST['deleteUser'])) {
-    $crud->delete($userData['user_id']);
+    $crud->delete('user', $userData['user_id']);
 }
 
 if (isset($_POST['delete1']) && isset($piscinas[0])) {

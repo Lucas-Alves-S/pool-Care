@@ -29,10 +29,10 @@ class CRUD
         }
     }
 
-    public function cadastroprofissional($nome, $email, $senha, $telefone)
+    public function cadastroprofissional($nome, $email, $senha, $telefone, $data)
     {
         $code = mt_rand(10000, 99999);
-        $query = "INSERT INTO profissional (nome, email, senha, telefone, verify_cod) VALUES ('$nome', '$email', '$senha', '$telefone', $code)";
+        $query = "INSERT INTO profissional (nome, email, senha, telefone, verify_cod, dataCadastro) VALUES ('$nome', '$email', '$senha', '$telefone', $code, '$data')";
         $result = $this->connection->query($query);
         if ($result == true) {
             echo "<script>window.location.href='../profProfile.php';</script>";
@@ -189,9 +189,21 @@ class CRUD
         
     }
 
-    public function delete($id)
+    public function infoServices($id){
+        $sql = "SELECT COUNT(*) AS SOMA, AVG(nota) AS MEDIA FROM servico WHERE fk_profissional_id = $id";
+        $result = $this->connection->query($sql);
+
+        if ($result === false) {
+            echo "Erro na consulta SQL: " . $this->connection->error;
+            return false;
+        } else {
+            return $result;
+        }
+    }
+
+    public function delete($table, $id)
     {
-        $query = "DELETE FROM user WHERE user_id = $id";
+        $query = "DELETE FROM $table WHERE ".$table."_id = $id";
         $result = $this->connection->query($query);
         
         if ($result) {

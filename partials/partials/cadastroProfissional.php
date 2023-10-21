@@ -7,8 +7,9 @@ if(isset($_POST["Cadastrar"])) {
     $email = $_POST["email"];
     $senha = $_POST["psw"];
     $telefone = $_POST["tel"];
+    $dataCadastro = date('F j, Y');
     $_SESSION["email"] = $email;
-    $crud->cadastroprofissional($nome, $email, $senha, $telefone);
+    $crud->cadastroprofissional($nome, $email, $senha, $telefone, $dataCadastro);
     echo "<script>window.location.href='./login.php';</script>";
   }
 ?>
