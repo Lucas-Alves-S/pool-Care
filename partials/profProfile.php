@@ -20,8 +20,16 @@ $userData = $crud->selectuser("profissional", $_SESSION["email"]);
     <main class="w-screen h-1/2 flex flex-col items-center pt-20" style="background-image: url('../assets/backgroundPerfil.png'); background-size: cover; background-position: center;">
         <img
             class="rounded-full min-h-40 max-h-40 min-w-40 max-w-40 w-40 h-40"
-            src=".././assets/picture.jpeg"
-        alt="">
+            src=<?php
+if ($userData['urlPhoto'] != "") {
+    echo $userData['urlPhoto'];
+}
+else {
+    echo ".././assets/picture.jpeg";
+}
+
+?>
+            alt="">
         <p class="text-xl bg-white rounded-md my-3 px-3"><?php echo $userData['nome'] ?></p>
         <div class="buttons flex w-1/2 my-3">
             <a href="./update.php?pagina=profissional"

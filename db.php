@@ -141,11 +141,12 @@ class CRUD
         }
     }
 
-    public function updateprofissional($nome, $email, $telefone, $id)
+    public function updateprofissional($nome, $email, $telefone, $url, $id)
     {
         $comm = "UPDATE profissional SET nome='{$nome}',
                                             email='{$email}',
-                                            telefone='{$telefone}' 
+                                            telefone='{$telefone}' ,
+                                            urlPhoto='{$url}'
                                         WHERE
                                             profissional_id = $id";
         $result = $this->connection->query($comm);

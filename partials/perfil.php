@@ -64,7 +64,14 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
             class="profile container flex flex-col items-center text-2xl p-5 md:w-1/4 md:h-screen md:shadow-2xl md:shadow-black md:z-10 md:bg-slate-700 md:text-white w-screen ">
             <div class="avatar rounded-full h-1/3 md:h-auto bg-black mb-8 "><img
                     class="rounded-full min-h-40 max-h-40 min-w-40 max-w-40 w-40 h-40"
-                    src=".././assets/picture.jpeg"
+                    src=<?php
+            if ($userData['urlPhoto'] != "") {
+                echo "{$userData['urlPhoto']}";
+            }
+            else {
+                echo ".././assets/picture.jpeg";
+            }
+            ?>
                     alt="">
             </div>
             <div class="data w-full grid grid-rows-8 grid-cols-2 gap-3 h-fit">
