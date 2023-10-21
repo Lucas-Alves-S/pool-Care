@@ -68,7 +68,7 @@ if (isset($_POST['login'])){
         </div>
       </div>
 
-      <a href="../Hub/main.php"
+      <a href="../pool.php"
         class="guest row-start-3 col-start-1 rounded-lg bg-zinc-400 transition duration-400 ease-in-out hover:bg-zinc-500 flex items-center justify-center">
         Convidado
       </a>

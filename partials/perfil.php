@@ -14,6 +14,12 @@ if ($piscinas[2] != "") {
     $link = "";
 }
 
+if (isset($_POST['sair'])) {
+    session_destroy();
+    session_unset();
+    header("../index.html");
+}
+
 if (isset($_POST['deleteUser'])) {
     $crud->delete('user', $userData['user_id']);
 }
@@ -123,9 +129,11 @@ else {
                 <a href="./updates/senha.php?tabela=user"
                     class="changePsw text-center rounded-lg bg-blue-500 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-5 md:row-span-2 md:col-span-1 md:h-full md:bg-blue-800 md:hover:bg-indigo-700 py-3">
                     Alterar Senha</a>
-                <a href="../index.html"
+                <form method="POST"
                     class="edit rounded-lg bg-red-500 transition duration-700 ease-in-out hover:bg-red-600 w-full row-span-2 flex items-center justify-center md:row-start-7 md:row-span-2 md:col-span-1 md:h-full md:bg-red-800 md:hover:bg-red-600 py-3">
-                    Logout</a>
+                    <input type="submit" name="sair" id="logout" value="Logout"
+                    class="h-full w-full cursor-pointer">
+                </form>
                 <form method="POST"
                     class="edit cursor-pointer rounded-lg bg-red-500 transition duration-700 ease-in-out hover:bg-red-600 w-full row-span-2 flex items-center justify-center md:row-start-7 md:row-span-2 md:col-span-1 md:h-full md:bg-red-700 md:hover:bg-red-500 py-3">
                     <input type="submit" name="deleteUser" id="deleteProfile" value="Excluir Perfil"

@@ -2,12 +2,14 @@
 require_once(".././db.php");
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: ./partials/login.php");
-    exit;
-}
+    $piscinas[0]['nome'] = "Piscina de Convidado";
+    $piscinas[0]['largura'] = 4;
+    $piscinas[0]['comprimento'] = 3.5;
+    $piscinas[0]['altura'] = 1.7;
+} else {
 $crud = new CRUD();
 $piscinas = $crud->selectpiscina('piscina_id', $_GET['id']);
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
