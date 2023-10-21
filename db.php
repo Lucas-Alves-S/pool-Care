@@ -190,7 +190,7 @@ class CRUD
     }
 
     public function infoServices($id){
-        $sql = "SELECT COUNT(*) AS SOMA, AVG(nota) AS MEDIA FROM servico WHERE fk_profissional_id = $id";
+        $sql = "SELECT COUNT(*) AS SOMA, ROUND(AVG(nota), 1) AS MEDIA FROM servico WHERE fk_profissional_id = $id";
         $result = $this->connection->query($sql);
 
         if ($result === false) {
