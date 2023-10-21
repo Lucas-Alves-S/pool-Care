@@ -54,6 +54,15 @@ class CRUD
         }
     }
 
+    public function cadastroServico($desc, $nota, $fk) {
+        $query = "INSERT INTO servico (descricao, nota, fk_profissional_id) VALUE ('$desc', $nota, $fk)";
+        if ($this->connection->query($query) === true) {
+            echo "<script>window.location.href='../profProfile.php';</script>";
+        } else {
+            print "<script>alert('Não foi possível cadastrar!')</script>";
+        }
+    }
+
     public function login($email, $senha)
     {
         $query = "SELECT * FROM user WHERE email = '$email' AND senha = '$senha'";
