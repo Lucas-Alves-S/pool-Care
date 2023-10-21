@@ -121,12 +121,13 @@ class CRUD
         return [$primeiroResultado, $segundoResultado, $terceiroResultado];
     }
 
-    public function updateuser($nome, $email, $telefone, $endereco, $id)
+    public function updateuser($nome, $email, $telefone, $endereco, $url, $id)
     {
         $sql = "UPDATE user SET nome='{$nome}',
                                             email='{$email}',
                                             telefone='{$telefone}',
-                                            endereco='{$endereco}'
+                                            endereco='{$endereco}',
+                                            urlPhoto='{$url}'
                                         WHERE
                                             user_id = $id";
         $result = $this->connection->query($sql);

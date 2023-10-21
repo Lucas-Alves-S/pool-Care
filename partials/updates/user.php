@@ -10,8 +10,9 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $telefone = $_POST['tel'];
     $endereco = $_POST['address'];
+    $foto = $_POST['urlfoto'];
     $id = $dados['user_id'];
-    $crud->updateuser($nome, $email, $telefone, $endereco, $id);
+    $crud->updateuser($nome, $email, $telefone, $endereco, $foto, $id);
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +41,18 @@ if (isset($_POST['submit'])) {
             </path>
         </svg>
         <form method="POST" 
-            class="register p-4 max-w-7xl self-center justify-self-center shadow-lg shadow-gray-400/40 rounded-lg grid grid-cols-1 gap-3 grid-rows-5">
+            class="register p-4 max-w-7xl self-center justify-self-center shadow-lg shadow-gray-400/40 rounded-lg flex flex-col align-between">
+            
+            <div class="foto h-40 w-full mb-3 flex justify-center">
+                <img src=<?php echo $dados['urlPhoto']?> alt="" id="foto" class="h-full w-[10rem] rounded-full shadow-lg shadow-slate-500/50">
+            </div>
+            <div class="urlfoto">
+                <label for="urlfoto">URL da foto</label>
+                <input type="text"
+                    oninput="photo()"
+                    class="border border-sky-500 rounded-full h-fit min-w-full focus:outline-none focus:ring focus:ring-sky-500 p-2"
+                    id="urlfoto" name="urlfoto" value="<?php echo $dados['urlPhoto']?>">
+            </div>
             <div class="nome">
                 <label for="nome">Nome</label>
                 <input type="text"
@@ -65,7 +77,7 @@ if (isset($_POST['submit'])) {
                     class="border border-sky-500 rounded-full h-fit min-w-full focus:outline-none focus:ring focus:ring-sky-500 p-2"
                     id="address" name="address" required value="<?php echo "{$dados['endereco']}"?>">
             </div>
-            <input type="submit" name="submit" value="Salvar Mudanças" class="save rounded-lg bg-sky-800 transition duration-700 ease-in-out w-full hover:bg-violet-700 flex items-center justify-center text-white h-2/3 self-center">
+            <input type="submit" name="submit" value="Salvar Mudanças" class="save rounded-lg bg-sky-800 transition duration-700 ease-in-out w-full hover:bg-violet-700 flex items-center justify-center text-white h-2/3 self-center py-2 mt-3">
         </form>
         <svg class="absolute bottom-0" id="wave" style="transform: rotate(0deg); transition: 0.3s"
             viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -80,6 +92,7 @@ if (isset($_POST['submit'])) {
             </path>
         </svg>
     </div>
+    <script src="./updates/changePhoto.js"></script>
 </body>
 
 </html>

@@ -65,12 +65,12 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
             <div class="avatar rounded-full h-1/3 md:h-auto bg-black mb-8 "><img
                     class="rounded-full min-h-40 max-h-40 min-w-40 max-w-40 w-40 h-40"
                     src=<?php
-            if ($userData['urlPhoto'] != "") {
-                echo "{$userData['urlPhoto']}";
-            }
-            else {
-                echo ".././assets/picture.jpeg";
-            }
+if ($userData['urlPhoto'] != "") {
+    echo $userData['urlPhoto'];
+}
+else {
+    echo ".././assets/picture.jpeg";
+}
             ?>
                     alt="">
             </div>
