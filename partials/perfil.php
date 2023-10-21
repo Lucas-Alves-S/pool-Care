@@ -71,13 +71,13 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
             <div class="avatar rounded-full h-1/3 md:h-auto bg-black mb-8 "><img
                     class="rounded-full min-h-40 max-h-40 min-w-40 max-w-40 w-40 h-40"
                     src=<?php
-if ($userData['urlPhoto'] != "") {
-    echo $userData['urlPhoto'];
-}
-else {
-    echo ".././assets/picture.jpeg";
-}
-            ?>
+                        if ($userData['urlPhoto'] != "") {
+                            echo $userData['urlPhoto'];
+                        }
+                        else {
+                            echo ".././assets/picture.jpeg";
+                        }
+                        ?>
                     alt="">
             </div>
             <div class="data w-full grid grid-rows-8 grid-cols-2 gap-3 h-fit">
@@ -139,6 +139,7 @@ else {
                     <input type="submit" name="deleteUser" id="deleteProfile" value="Excluir Perfil"
                         class="h-full w-full cursor-pointer">
                 </form>
+                <button onclick="popUp()" class= "text-center rounded-lg bg-blue-400 transition duration-700 ease-in-out hover:bg-blue-600 w-full row-span-2 flex items-center justify-center md:row-start-8 md:row-span-2 md:col-span-2 md:h-full md:bg-blue-800 md:hover:bg-indigo-600 py-3">Contratar</button>
 
             </div>
         </div>
@@ -251,6 +252,23 @@ else {
                         edit
                     </span>
                 </a>
+            </div>
+        </div>
+        <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-20 hidden" id="limpadores">
+            <div class="bg-white w-[80vw] h-[80vh] p-4 rounded-lg shadow-lg z-20 relative">
+                <button class="absolute top-0 right-0 m-2 text-white bg-red-600 rounded-full h-[2rem] w-[2rem]" id="fechaPopUp" onclick="popUp()">X</button>
+                <table class="max-w-full max-h-full">
+                    <tr class="mb-3">
+                        <th class="mr-3"></th>
+                        <th class="mr-3">Nome Completo</th>
+                        <th class="mr-3">Serviços Realizados</th>
+                        <th class="mr-3">Nota Média</th>
+                        <th class="mr-3">Número de Contato</th>
+                    </tr>
+                    <?php
+                        $crud->selectContratacao();
+                    ?>
+                </table>
             </div>
         </div>
         <script src="../src/profile.js"></script>

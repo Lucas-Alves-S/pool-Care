@@ -130,6 +130,26 @@ class CRUD
         return [$primeiroResultado, $segundoResultado, $terceiroResultado];
     }
 
+    public function selectContratacao() {
+        $query = "select Pro.urlPhoto, Pro.nome, COUNT(S.servico_id) as servicos, AVG(S.nota) as nota, Pro.telefone  from profissional as Pro
+                  Inner join servico as S on Pro.profissional_id = S.fk_profissional_id
+                  group by Pro.profissional_id;";
+        $result = $this->connection->query($query);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<tr class="border">';
+                echo '<td> <img class="rounded-full h-[5rem] mr-3 p-2" src="' . $row["urlPhoto"] . '" alt=""> </td>';
+                echo '<td>' . $row["nome"] . '</td>';
+                echo '<td>' . $row["servicos"] . '</td>';
+                echo '<td>' . number_format($row["nota"], 1) . '</td>';
+                echo '<td>' . $row["telefone"] . '</td>';
+                echo '</tr>';
+            }
+        } else {
+            echo '<tr><td colspan="3">Nenhum registro encontrado</td></tr>';
+        }
+    }
+
     public function updateuser($nome, $email, $telefone, $endereco, $url, $id)
     {
         $sql = "UPDATE user SET nome='{$nome}',

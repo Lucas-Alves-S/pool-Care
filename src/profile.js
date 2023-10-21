@@ -47,4 +47,14 @@ function emulateInput(i) {
     i.click();
 }
 
+function popUp() {
+    const elemento = document.getElementById('limpadores')
+    if (elemento.classList.contains("hidden")) {
+        elemento.classList.remove("hidden")
+    }
+    else {
+        elemento.classList.add("hidden")
+    }
+    
+}
 
