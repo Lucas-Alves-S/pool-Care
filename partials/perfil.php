@@ -181,7 +181,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                         onclick="emulateInput(document.getElementById('delete1'))"></i>
                     <input id="delete1" class="hidden" type="submit" name="delete1">
                 </form>
-                <a href="<?php echo "./updates/piscina.php?id={$piscinas[0]['piscina_id']}" ?>" id="editBtn1" class="absolute bottom-0 right-0 h-fit w-fit z-100 hover:text-slate-700"><span
+                <a href="<?php echo "./update.php?id={$piscinas[0]['piscina_id']}" ?>" id="editBtn1" class="absolute bottom-0 right-0 h-fit w-fit z-100 hover:text-slate-700"><span
                         class="material-symbols-outlined">
                         edit
                     </span>
@@ -214,7 +214,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                         onclick="emulateInput(document.getElementById('delete2'))"></i>
                     <input id="delete2" class="hidden" type="submit" name="delete2">
                 </form>
-                <a href="<?php echo "./updates/piscina.php?id={$piscinas[1]['piscina_id']}" ?>" id="editBtn2" class=" absolute bottom-0 right-0 hfit5 wfit5 z-10 hover:text-slate-700"><span
+                <a href="<?php echo "./update.php?id={$piscinas[1]['piscina_id']}" ?>" id="editBtn2" class=" absolute bottom-0 right-0 hfit5 wfit5 z-10 hover:text-slate-700"><span
                         class="material-symbols-outlined">
                         edit
                     </span>
@@ -247,7 +247,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
                         onclick="emulateInput(document.getElementById('delete3'))"></i>
                     <input id="delete3" class="hidden" type="submit" name="delete3">
                 </form>
-                <a href="<?php echo "./updates/piscina.php?id={$piscinas[2]['piscina_id']}" ?>" id="editBtn3" class=" absolute bottom-0 right-0 hfit5 wfit5 z-10 hover:text-slate-700"><span
+                <a href="<?php echo "./update.php?id={$piscinas[2]['piscina_id']}" ?>" id="editBtn3" class=" absolute bottom-0 right-0 hfit5 wfit5 z-10 hover:text-slate-700"><span
                         class="material-symbols-outlined">
                         edit
                     </span>
@@ -255,15 +255,16 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
             </div>
         </div>
         <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-20 hidden" id="limpadores">
-            <div class="bg-white w-[80vw] h-[80vh] p-4 rounded-lg shadow-lg z-20 relative">
+            <div class="bg-white w-[80vw] h-[80vh] p-12 rounded-lg shadow-lg z-20 relative">
                 <button class="absolute top-0 right-0 m-2 text-white bg-red-600 rounded-full h-[2rem] w-[2rem]" id="fechaPopUp" onclick="popUp()">X</button>
-                <table class="max-w-full max-h-full">
-                    <tr class="mb-3">
+                <table class="max-w-full max-h-full w-full">
+                    <tr class="mb-3 w-full">
                         <th class="mr-3"></th>
                         <th class="mr-3">Nome Completo</th>
                         <th class="mr-3">Serviços Realizados</th>
                         <th class="mr-3">Nota Média</th>
                         <th class="mr-3">Número de Contato</th>
+                        <th class="mr-3">Dias Cadastrados na Plataforma</th>
                     </tr>
                     <?php
                         $crud->selectContratacao();

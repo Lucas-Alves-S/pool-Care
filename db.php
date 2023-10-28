@@ -29,10 +29,10 @@ class CRUD
         }
     }
 
-    public function cadastroprofissional($nome, $email, $senha, $telefone, $data)
+    public function cadastroprofissional($nome, $email, $senha, $telefone)
     {
         $code = mt_rand(10000, 99999);
-        $query = "INSERT INTO profissional (nome, email, senha, telefone, verify_cod, dataCadastro) VALUES ('$nome', '$email', '$senha', '$telefone', $code, '$data')";
+        $query = "INSERT INTO profissional (nome, email, senha, telefone, verify_cod, dataCadastro) VALUES ('$nome', '$email', '$senha', '$telefone', $code, Now())";
         $result = $this->connection->query($query);
         if ($result == true) {
             echo "<script>window.location.href='../profProfile.php';</script>";
@@ -131,18 +131,21 @@ class CRUD
     }
 
     public function selectContratacao() {
-        $query = "select Pro.urlPhoto, Pro.nome, COUNT(S.servico_id) as servicos, AVG(S.nota) as nota, Pro.telefone  from profissional as Pro
-                  Inner join servico as S on Pro.profissional_id = S.fk_profissional_id
-                  group by Pro.profissional_id;";
+        $query = 'select Pro.urlPhoto, Pro.nome, COALESCE(COUNT(S.servico_id), 0) as servicos, COALESCE(ROUND(AVG(S.nota), 1), "0 serviços realizados") as nota, DATEDIFF(Pro.dataCadastro, CURRENT_DATE()) as dias, Pro.telefone
+                  from profissional as Pro
+                  left join servico as S on Pro.profissional_id = S.fk_profissional_id
+                  group by Pro.profissional_id;
+                ';
         $result = $this->connection->query($query);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo '<tr class="border">';
-                echo '<td> <img class="rounded-full h-[5rem] mr-3 p-2" src="' . $row["urlPhoto"] . '" alt=""> </td>';
-                echo '<td>' . $row["nome"] . '</td>';
-                echo '<td>' . $row["servicos"] . '</td>';
-                echo '<td>' . number_format($row["nota"], 1) . '</td>';
-                echo '<td>' . $row["telefone"] . '</td>';
+                echo '<td> <img class="rounded-full h-[5rem] mr-3 p-2" src="' . ($row["urlPhoto"] === "" ? "./assets/picture.jpeg" : $row["urlPhoto"]) . '" alt=""> </td>';
+                echo '<td class="text-center">' . $row["nome"] . '</td>';
+                echo '<td class="text-center">' . $row["servicos"] . '</td>';
+                echo '<td class="text-center">' . $row["nota"] . '</td>';
+                echo '<td class="text-center">' . $row["telefone"] . '</td>';
+                echo '<td class="text-center">' . $row["dias"] . '</td>';
                 echo '</tr>';
             }
         } else {

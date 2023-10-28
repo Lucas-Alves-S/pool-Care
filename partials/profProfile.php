@@ -70,7 +70,11 @@ else {
                 <div class="desc text-slate-500 bold mt-6">Nota Média</div>
             </div>
             <div class="tempo flex flex-col items-center w-1/3 justify-center border-x-2 border-color-slate-600">
-                <div class="value text-5xl"><?php echo "{$userData['dataCadastro']}"?></div>
+                <div class="value text-5xl"><?php $dataCadastroOriginal = $userData['dataCadastro'];
+                                                  $dataCadastroFormatada = date('d-m-Y', strtotime($dataCadastroOriginal));
+                                                  echo $dataCadastroFormatada;
+                                            ?>
+                </div>
                 <div class="desc text-slate-500 bold mt-6">Cadastrado na Plataforma</div>
             </div>
             <div class="servicos flex flex-col items-center w-1/3 justify-center">
