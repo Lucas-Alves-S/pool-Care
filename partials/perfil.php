@@ -255,7 +255,7 @@ if (isset($_POST['delete3']) && isset($piscinas[2])) {
             </div>
         </div>
         <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-20 hidden" id="limpadores">
-            <div class="bg-white w-[80vw] h-[80vh] p-12 rounded-lg shadow-lg z-20 relative">
+            <div class="bg-white w-[80vw] h-[80vh] p-12 rounded-lg shadow-lg z-20 relative overflow-auto">
                 <button class="absolute top-0 right-0 m-2 text-white bg-red-600 rounded-full h-[2rem] w-[2rem]" id="fechaPopUp" onclick="popUp()">X</button>
                 <table class="max-w-full max-h-full w-full">
                     <tr class="mb-3 w-full">

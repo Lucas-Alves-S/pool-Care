@@ -131,7 +131,7 @@ class CRUD
     }
 
     public function selectContratacao() {
-        $query = 'select Pro.urlPhoto, Pro.nome, COALESCE(COUNT(S.servico_id), 0) as servicos, COALESCE(ROUND(AVG(S.nota), 1), "0 serviços realizados") as nota, DATEDIFF(Pro.dataCadastro, CURRENT_DATE()) as dias, Pro.telefone
+        $query = 'select Pro.urlPhoto, Pro.nome, COALESCE(COUNT(S.servico_id), 0) as servicos, COALESCE(ROUND(AVG(S.nota), 1), "0 serviços realizados") as nota, DATEDIFF(CURRENT_DATE(), Pro.dataCadastro) as dias, Pro.telefone
                   from profissional as Pro
                   left join servico as S on Pro.profissional_id = S.fk_profissional_id
                   group by Pro.profissional_id;
